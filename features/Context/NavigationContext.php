@@ -154,7 +154,7 @@ class NavigationContext extends RawMinkContext implements PageObjectAwareInterfa
         $this->currentPage = $page;
         $this->getCurrentPage()->open();
 
-        return new Step\Then('I should see "403 Forbidden"');
+        return new Step\Then('I should see "Access denied"');
     }
 
     /**
@@ -192,7 +192,7 @@ class NavigationContext extends RawMinkContext implements PageObjectAwareInterfa
         $this->currentPage = sprintf('%s %s', $page, $action);
         $this->getCurrentPage()->open(['id' => $entity->getId()]);
 
-        return new Step\Then('I should see "403 Forbidden"');
+        return new Step\Then('I should see "Access denied"');
     }
 
     /**
@@ -434,7 +434,7 @@ class NavigationContext extends RawMinkContext implements PageObjectAwareInterfa
         $this->currentPage = sprintf("%s %s", ucfirst($job->getType()), $action);
         $page = $this->getCurrentPage()->open(['id' => $job->getId()]);
 
-        return new Step\Then('I should see "403 Forbidden"');
+        return new Step\Then('I should see "Access denied"');
     }
 
     /**
