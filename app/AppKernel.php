@@ -18,7 +18,7 @@ class AppKernel extends Kernel
     public function registerBundles()
     {
         $bundles = [
-            // your app bundles should be registered here
+            new Pim\Bundle\DataGeneratorBundle\PimDataGeneratorBundle(),
         ];
 
         if (in_array($this->getEnvironment(), array('dev', 'test', 'behat'))) {
