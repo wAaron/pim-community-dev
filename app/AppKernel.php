@@ -103,6 +103,7 @@ class AppKernel extends Kernel
             new Akeneo\Bundle\MeasureBundle\AkeneoMeasureBundle(),
             new Akeneo\Bundle\BatchBundle\AkeneoBatchBundle(),
             new Akeneo\Bundle\StorageUtilsBundle\AkeneoStorageUtilsBundle(),
+            new Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),
         ];
     }
 

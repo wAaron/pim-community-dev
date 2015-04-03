@@ -22,6 +22,7 @@
         "ass/xmlsecurity": "1.0.0",
         "doctrine/annotations": "1.2.3",
         "doctrine/cache": "1.3.1",
+        "doctrine/doctrine-cache-bundle": "1.0.1",
         "doctrine/common": "2.4.2",
         "doctrine/data-fixtures": "1.0.0",
         "doctrine/doctrine-bundle": "1.2.0",

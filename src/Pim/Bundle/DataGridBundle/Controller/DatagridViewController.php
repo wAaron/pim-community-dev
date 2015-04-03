@@ -2,6 +2,7 @@
 
 namespace Pim\Bundle\DataGridBundle\Controller;
 
+use Doctrine\Common\Cache\CacheProvider;
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Pim\Bundle\DataGridBundle\Entity\DatagridView;
 use Pim\Bundle\DataGridBundle\Manager\DatagridViewManager;
@@ -30,6 +31,9 @@ class DatagridViewController extends AbstractDoctrineController
     /** @var DatagridViewManager */
     protected $datagridViewManager;
 
+    /** @var  CacheProvider */
+    protected $cache;
+
     /**
      * Constructor
      *
@@ -43,6 +47,7 @@ class DatagridViewController extends AbstractDoctrineController
      * @param EventDispatcherInterface $eventDispatcher
      * @param ManagerRegistry          $doctrine
      * @param DatagridViewManager      $datagridViewManager
+     * @param CacheProvider            $cache
      */
     public function __construct(
         Request $request,
@@ -54,7 +59,8 @@ class DatagridViewController extends AbstractDoctrineController
         TranslatorInterface $translator,
         EventDispatcherInterface $eventDispatcher,
         ManagerRegistry $doctrine,
-        DatagridViewManager $datagridViewManager
+        DatagridViewManager $datagridViewManager,
+        CacheProvider $cache
     ) {
         parent::__construct(
             $request,
@@ -69,6 +75,7 @@ class DatagridViewController extends AbstractDoctrineController
         );
 
         $this->datagridViewManager = $datagridViewManager;
+        $this->cache               = $cache;
     }
 
     /**
@@ -93,6 +100,7 @@ class DatagridViewController extends AbstractDoctrineController
         $form = $this->createForm('pim_datagrid_view', $view);
 
         if ($request->isMethod('POST')) {
+            $this->cache->flushAll();
             $creation = !(bool) $view->getId();
             if (!$creation) {
                 $form->remove('label');

@@ -37,6 +37,7 @@ services:
         parent: pim_enrich.controller.abstract_doctrine
         arguments:
             - '@pim_datagrid.manager.datagrid_view'
+            - '@doctrine_cache.providers.pim_apc_metadata_cache'
 
     pim_datagrid.controller.mass_action:
         scope: request

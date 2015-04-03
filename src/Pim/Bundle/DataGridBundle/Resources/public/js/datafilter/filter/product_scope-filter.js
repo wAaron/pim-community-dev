@@ -39,8 +39,6 @@ define(
                 var $filterChoices = $grid.find('#add-filter-select');
                 $filterChoices.find('option[value="scope"]').remove();
                 $filterChoices.multiselect('refresh');
-
-                this.selectWidget.multiselect('refresh');
             },
 
             /**

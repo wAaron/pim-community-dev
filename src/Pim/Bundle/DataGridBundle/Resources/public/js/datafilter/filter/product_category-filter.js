@@ -48,7 +48,6 @@ define(
              */
             initialize: function() {
                 mediator.once('datagrid_filters:rendered', this._init, this);
-
                 NumberFilter.prototype.initialize.apply(this, arguments);
             },
 
