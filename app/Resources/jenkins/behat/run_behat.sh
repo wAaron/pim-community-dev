@@ -94,7 +94,7 @@ for FEATURE in $FEATURES; do
                     export SYMFONY__MONGODB__DATABASE=$DB_PREFIX$PROC
                     DATE=`date +'%F %T̀'`
                     echo "[$DATE] Executing feature $FEATURE_NAME with proc $PROC" | tee -a $OUTPUT
-                    ($BEHAT_CMD --profile=$PROFILE_PREFIX$PROC $FEATURE_NAME 2>&1 | tee -a $OUTPUT) &
+                    ($BEHAT_CMD --profile=$PROFILE_PREFIX$PROC features/family/browse_families.feature 2>&1 | tee -a $OUTPUT) &
                     RESULT=$!
                     eval PID_$PROC=$RESULT
                     FEATURE_NAME=""
