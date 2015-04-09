@@ -14,6 +14,8 @@ use Pim\Component\ReferenceData\Model\ReferenceDataInterface;
  */
 class Color extends AbstractReferenceData implements ReferenceDataInterface
 {
+    protected $id;
+
     /** @var string */
     protected $name;
 
@@ -218,5 +220,10 @@ class Color extends AbstractReferenceData implements ReferenceDataInterface
     public function getSortOrder()
     {
         return 0;
+    }
+
+    public function getId()
+    {
+        return $this->id;
     }
 }
