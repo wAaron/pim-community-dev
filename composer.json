@@ -55,7 +55,7 @@
         "symfony/icu": "1.1.0",
         "symfony/monolog-bundle": "2.3.0",
         "symfony/swiftmailer-bundle": "2.3.8",
-        "symfony/symfony": "2.7.*@dev",
+        "symfony/symfony": "2.7.*@beta",
         "twig/extensions": "1.0.1"
     },
     "require-dev": {
