@@ -166,6 +166,6 @@ class StringFilter extends AbstractAttributeFilter implements AttributeFilterInt
     protected function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setRequired(['field']);
-        $resolver->setOptional(['locale', 'scope']);
+        $resolver->setDefined(['locale', 'scope']);
     }
 }
